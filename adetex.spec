@@ -8,6 +8,7 @@ Copyright:	Copyright (C) 1995,1996,1997,1998 Sebastian Rahtz <s.rahtz@elsevier.c
 Source0:	ftp://ftp.duke.edu/tex-archive/macros/%{name}.tar.bz2
 Patch0:		%{name}-i18n.patch
 Group:		Applications/Publishing/SGML
+Requires:	tetex-latex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
