@@ -20,20 +20,20 @@ wyj¶ciowych Jade TeX tak samo jak plików LaTeXa.
 
 %prep
 %setup -q -n jadetex
-%patch0 -p1 
+%patch0 -p1
 
 %build
 #make -f Makefile.jadetex install DESTDIR=$RPM_BUILD_ROOT
 
 # temporary fix for some latex errors
 # they are not important and can be ignored
-tex jadetex.ins 
+tex jadetex.ins
 echo | tex -ini "&hugelatex" -progname=jadetex jadetex.ini || :
 echo | pdftex -ini "&pdflatex" -progname=pdfjadetex pdfjadetex.ini || :
 
-#tex jadetex.ins 
-#tex -ini "&hugelatex" -progname=jadetex jadetex.ini 
-#pdftex -ini "&pdflatex" -progname=pdfjadetex pdfjadetex.ini 
+#tex jadetex.ins
+#tex -ini "&hugelatex" -progname=jadetex jadetex.ini
+#pdftex -ini "&pdflatex" -progname=pdfjadetex pdfjadetex.ini
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,13 +41,13 @@ rm -rf $RPM_BUILD_ROOT
 ##export TT=`kpsewhich -expand-var '$TEXMFMAIN'`
 # make install DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_datadir}/texmf/web2c 
+install -d $RPM_BUILD_ROOT%{_datadir}/texmf/web2c
 install -d $RPM_BUILD_ROOT%{_datadir}/texmf/tex/jadetex
 install -d $RPM_BUILD_ROOT%{_bindir}
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 mv pdfjadetex.fmt jadetex.fmt $RPM_BUILD_ROOT%{_datadir}/texmf/web2c
-mv jadetex.1 pdfjadetex.1 $RPM_BUILD_ROOT%{_mandir}/man1 
+mv jadetex.1 pdfjadetex.1 $RPM_BUILD_ROOT%{_mandir}/man1
 cp dsssl.def jadetex.ltx $RPM_BUILD_ROOT%{_datadir}/texmf/tex/jadetex
 
 #ln -s virtex $RPM_BUILD_ROOT%{_bindir}/jadetex
