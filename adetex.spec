@@ -1,4 +1,5 @@
-Summary:	LaTeX macros for converting Jade TeX output into DVI/PS/PDF.
+Summary:	LaTeX macros for converting Jade TeX output into DVI/PS/PDF
+Summary(pl):	Makra LaTeXa do konwersji wyj¶cia Jade TeXa do DVI/PS/PDF
 Name:		jadetex
 Version:	2.15
 Release:	1
@@ -11,8 +12,12 @@ Group(pl):	Aplikacje/Publikowanie/SGML
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-JadeTeX contains the additional LaTeX macros necessary for taking Jade
+Jadetex contains the additional LaTeX macros necessary for taking Jade
 TeX output files and processing them as LaTeX files.
+
+%description -l pl
+Jadetex zawiera dodatkowe makra LaTeXa, niezbêdne do obróbki plików
+wyj¶ciowych Jade TeX tak samo jak plików LaTeXa.
 
 %prep
 %setup -q -n jadetex
@@ -37,21 +42,21 @@ rm -rf $RPM_BUILD_ROOT
 ##export TT=`kpsewhich -expand-var '$TEXMFMAIN'`
 # make install DESTDIR=$RPM_BUILD_ROOT
 
-install -d  $RPM_BUILD_ROOT%{_datadir}/texmf/web2c 
-install -d  $RPM_BUILD_ROOT%{_datadir}/texmf/tex/jadetex
-install -d ${RPM_BUILD_ROOT}%{_bindir}
-install -d ${RPM_BUILD_ROOT}%{_mandir}/man1
+install -d $RPM_BUILD_ROOT%{_datadir}/texmf/web2c 
+install -d $RPM_BUILD_ROOT%{_datadir}/texmf/tex/jadetex
+install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 mv pdfjadetex.fmt jadetex.fmt $RPM_BUILD_ROOT%{_datadir}/texmf/web2c
-mv jadetex.1 pdfjadetex.1 ${RPM_BUILD_ROOT}%{_mandir}/man1 
+mv jadetex.1 pdfjadetex.1 $RPM_BUILD_ROOT%{_mandir}/man1 
 cp dsssl.def jadetex.ltx $RPM_BUILD_ROOT%{_datadir}/texmf/tex/jadetex
 
-#ln -s virtex ${RPM_BUILD_ROOT}%{_bindir}/jadetex
-#ln -s pdfvirtex ${RPM_BUILD_ROOT}%{_bindir}/pdfjadetex
-ln -s tex ${RPM_BUILD_ROOT}%{_bindir}/jadetex
-ln -s pdftex ${RPM_BUILD_ROOT}%{_bindir}/pdfjadetex
+#ln -s virtex $RPM_BUILD_ROOT%{_bindir}/jadetex
+#ln -s pdfvirtex $RPM_BUILD_ROOT%{_bindir}/pdfjadetex
+ln -s tex $RPM_BUILD_ROOT%{_bindir}/jadetex
+ln -s pdftex $RPM_BUILD_ROOT%{_bindir}/pdfjadetex
 
-gzip -9nf ${RPM_BUILD_ROOT}%{_mandir}/man1/*.1
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
