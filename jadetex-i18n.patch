@@ -1,0 +1,21 @@
+diff -Nur jadetex/jadetex.dtx jadetex.new/jadetex.dtx
+--- jadetex/jadetex.dtx	Sat Apr  8 22:39:30 2000
++++ jadetex.new/jadetex.dtx	Sat Jun 10 11:36:32 2000
+@@ -35,7 +35,7 @@
+ %
+ % \iffalse
+ %<*driver>
+-\documentclass{ltxdoc}
++\documentclass[a4paper]{ltxdoc}
+ \usepackage{times,array,longtable,colortbl}
+ \usepackage[T1]{fontenc}
+ \makeatletter
+@@ -130,7 +130,7 @@
+ \def\TeXFOTversion{0.0} 
+ \makeatletter
+ \ifx\pushocplist\@undefined
+- \RequirePackage[portuguese,brazil,spanish,german,frenchb,english]{babel}[1997/01/23]
++ \RequirePackage[german,english,polish]{babel}[1997/01/23]
+  \RequirePackage[implicit=true,colorlinks,linkcolor=black,bookmarks=true]{hyperref}[1998/08/08]
+  \def\PDFBorders{0 0 0}
+  \RequirePackage[dsssl]{inputenc}[1997/12/20]
