@@ -56,8 +56,6 @@ cp dsssl.def jadetex.ltx $RPM_BUILD_ROOT%{_datadir}/texmf/tex/jadetex
 ln -s tex $RPM_BUILD_ROOT%{_bindir}/jadetex
 ln -s pdftex $RPM_BUILD_ROOT%{_bindir}/pdfjadetex
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*.1
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
