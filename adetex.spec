@@ -3,13 +3,14 @@ Summary(pl):	Makra LaTeXa do konwersji wyj¶cia Jade TeXa do DVI/PS/PDF
 Name:		jadetex
 Version:	2.15
 Release:	1
-Requires:	sgml-common, tetex >= 0.9, tetex-latex >= 0.9
 License:	Copyright (C) 1995,1996,1997,1998 Sebastian Rahtz <s.rahtz@elsevier.co.uk>
+Group:		Applications/Publishing/SGML
 Source0:	ftp://ftp.duke.edu/tex-archive/macros/%{name}.tar.bz2
 # Source0-md5:	2e2d266e03062b9157d177b4f73a3a2f
 Patch0:		%{name}-i18n.patch
-Group:		Applications/Publishing/SGML
-Requires:	tetex-latex
+Requires:	sgml-common
+Requires:	tetex >= 0.9
+Requires:	tetex-latex >= 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
