@@ -62,10 +62,10 @@ ln -s pdftex $RPM_BUILD_ROOT%{_bindir}/pdfjadetex
 rm -rf $RPM_BUILD_ROOT
 
 %post
-[ -x %{_bindir}/texhash ] && /usr/bin/env - %{_bindir}/texhash 1>&2
+[ ! -x %{_bindir}/texhash ] || /usr/bin/env - %{_bindir}/texhash 1>&2
 
 %postun
-[ -x %{_bindir}/texhash ] && /usr/bin/env - %{_bindir}/texhash 1>&2
+[ ! -x %{_bindir}/texhash ] || /usr/bin/env - %{_bindir}/texhash 1>&2
 
 %files
 %defattr(644,root,root,755)
