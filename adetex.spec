@@ -1,5 +1,5 @@
 Summary:	LaTeX macros for converting Jade TeX output into DVI/PS/PDF
-Summary(pl):	Makra LaTeXa do konwersji wyj¶cia Jade TeXa do DVI/PS/PDF
+Summary(pl.UTF-8):   Makra LaTeXa do konwersji wyjÅ›cia Jade TeXa do DVI/PS/PDF
 Name:		jadetex
 Version:	2.15
 Release:	1
@@ -17,9 +17,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Jadetex contains the additional LaTeX macros necessary for taking Jade
 TeX output files and processing them as LaTeX files.
 
-%description -l pl
-Jadetex zawiera dodatkowe makra LaTeXa, niezbêdne do obróbki plików
-wyj¶ciowych Jade TeX tak samo jak plików LaTeXa.
+%description -l pl.UTF-8
+Jadetex zawiera dodatkowe makra LaTeXa, niezbÄ™dne do obrÃ³bki plikÃ³w
+wyjÅ›ciowych Jade TeX tak samo jak plikÃ³w LaTeXa.
 
 %prep
 %setup -q -n jadetex
