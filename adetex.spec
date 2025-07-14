@@ -23,7 +23,7 @@ wyjściowych Jade TeX tak samo jak plików LaTeXa.
 
 %prep
 %setup -q -n jadetex
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 #make -f Makefile.jadetex install DESTDIR=$RPM_BUILD_ROOT
